@@ -1,11 +1,18 @@
 import React from 'react';
 import axios from 'axios';
-
+// import { Line } from 'react-chartjs-2'
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      chartData: {
+        labels: [],
+        datasets: {
+
+        }
+      }
+    };
   }
 
   componentDidMount() {
@@ -13,7 +20,7 @@ class Home extends React.Component {
       .then((result) => {
         result.data.data.coins.length = 20;
         this.setState({ externalData: result.data.data.coins });
-        console.log(this.state);
+        console.log(this.state.externalData);
       });
 
   }
@@ -24,7 +31,12 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div>
+        // <Line
+        //   data={data}
+        //   options={{
+        //     maintainAspectRatio: false
+        //   }}
+        // />
         <div className="portfolio-container">
           <div className="pa4">
             <div className="overflow-auto">
@@ -56,8 +68,6 @@ class Home extends React.Component {
             </div>
           </div>
         </div>
-
-      </div>
     );
   }
 }
