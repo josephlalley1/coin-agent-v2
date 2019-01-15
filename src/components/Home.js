@@ -30,13 +30,21 @@ class Home extends React.Component {
   }
 
   render() {
-    const {externalData} = this.state;
+    const { externalData } = this.state;
+    if(!externalData) return null;
+    const lineChartData = {}
+    externalData.forEach(coin => {
+      lineChartData[coin.name] = coin.history.map((data, index) => [index +1, parseFloat(data)]);
+    });
     return (
       <div>
         {this.state.externalData && this.state.externalData.map(
           (coin, i) =>
-            console.log('Coin number', coin.rank, '-', coin.name, ', its history is:', coin.history);
-        <Line key={i} data={coin.history} options={{ maintainAspectRatio: false }})} />
+            <div key={i} style={{width: 300 + 'px', height: 300 + 'px'}}>
+              {console.log(lineChartData[coin.name])}
+              <Line data={lineChartData[coin.name]} options={{ maintainAspectRatio: false }} />
+            </div>)}
+
         <div className="portfolio-container">
           <div className="pa4">
             <div className="overflow-auto">
