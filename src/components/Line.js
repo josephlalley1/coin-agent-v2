@@ -4,7 +4,7 @@ import { Line } from 'react-chartjs-2';
 const ChartLine = ({ data }) => {
   console.log(data);
   const chartData = {
-    labels: ['', '', '', '', '', '', ''],
+    labels: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''],
     datasets: [
       {
         label: '',
