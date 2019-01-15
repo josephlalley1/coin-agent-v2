@@ -48,6 +48,7 @@
     "moment": "^2.22.2",
     "mongoose": "^5.3.13",
     "morgan": "^1.9.1",
+    "nodemon": "^1.18.9",
     "react": "^16.6.3",
     "react-chartjs-2": "^2.7.4",
     "react-dom": "^16.6.3",

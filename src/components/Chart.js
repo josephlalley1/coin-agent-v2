@@ -1,11 +1,11 @@
-import React from 'react';
-import { Line } from 'react-chartjs-2';
+import React from 'react'
+import { Line } from 'react-chartjs-2'
 
 // turn this into a function component
 
 class Chart extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       chartData: {
         labels: [],
@@ -13,7 +13,7 @@ class Chart extends React.Component {
 
         }
       }
-    };
+    }
   }
 
   render(){
@@ -24,8 +24,8 @@ class Chart extends React.Component {
           maintainAspectRatio: false
         }}
       />
-    );
+    )
   }
 }
 
-export default Chart;
+export default Chart

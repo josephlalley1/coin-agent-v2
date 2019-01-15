@@ -13,6 +13,7 @@ class Header extends React.Component {
   handleLogout() {
     deleteToken();
     this.props.history.push('/');
+    console.log('logged out');
   }
 
 
@@ -29,7 +30,7 @@ class Header extends React.Component {
           {isAuthenticated() && <Link to="/trades/new" className="link dim dark-gray f6 f5-ns dib mr3 mr4-ns">Add a trade</Link>}
           {!isAuthenticated() && <Link to="/register" className="link dim dark-gray f6 f5-ns dib mr3 mr4-ns">Register</Link>}
           {!isAuthenticated() && <Link to="/login" className="link dim dark-gray f6 f5-ns dib">Log in</Link>}
-          {isAuthenticated() && <Link to="/trades" className="link dim dark-gray f6 f5-ns dib" onClick={this.handleLogout}>Log out</Link>}
+          {isAuthenticated() && <a className="link dim dark-gray f6 f5-ns dib" onClick={this.handleLogout}>Log out</a>}
         </div>
       </nav>
     );

@@ -12,7 +12,7 @@ class Register extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     axios.post('/api/register', this.state)
-      .then(() => this.props.history.push('/trades'));
+      .then(() => this.props.history.push('/login'));
   }
 
   handleChange({ target: { name, value }}) {

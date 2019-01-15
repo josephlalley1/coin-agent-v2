@@ -15,7 +15,7 @@ class Login extends React.Component {
     axios.post('/api/login', this.state)
       .then(result => {
         saveToken(result.data.token);
-        this.props.history.push('/trades');
+        this.props.history.push('/trades/new');
       });
   }
 
