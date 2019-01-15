@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Line } from 'react-chartjs-2'
+import ChartLine from './Line.js';
 
 class Home extends React.Component {
   constructor(props) {
@@ -31,18 +31,25 @@ class Home extends React.Component {
 
   render() {
     const { externalData } = this.state;
-    if(!externalData) return null;
-    const lineChartData = {}
-    externalData.forEach(coin => {
-      lineChartData[coin.name] = coin.history.map((data, index) => [index +1, parseFloat(data)]);
-    });
+    if (!externalData) return null;
+
+    const data = externalData.reduce((lineChartData, coin) => {
+      console.log(lineChartData);
+      lineChartData[coin.name] = coin.history.map((price) => [
+        parseFloat(price)
+      ]);
+      return lineChartData;
+    }, {});
+    console.log(data);
+
     return (
       <div>
         {this.state.externalData && this.state.externalData.map(
           (coin, i) =>
-            <div key={i} style={{display: 'inline-block', width: 300 + 'px', height: 150 + 'px'}}>
-              {console.log(lineChartData[coin.name])}
-              <Line data={lineChartData[coin.name]} options={{ maintainAspectRatio: false }} />
+            <div key={i} className="chart-box" style={{display: 'inline-block'}}>
+              <h1 style={{textAlign: 'center'}}>{coin.name}</h1>
+              <ChartLine key={i} data={data[coin.name]}/>
+              {console.log('this is the data for', coin.name, ':', data[coin.name])}
             </div>)}
 
         <div className="portfolio-container">
