@@ -40,7 +40,7 @@ class Home extends React.Component {
       <div>
         {this.state.externalData && this.state.externalData.map(
           (coin, i) =>
-            <div key={i} style={{width: 300 + 'px', height: 300 + 'px'}}>
+            <div key={i} style={{display: 'inline-block', width: 300 + 'px', height: 150 + 'px'}}>
               {console.log(lineChartData[coin.name])}
               <Line data={lineChartData[coin.name]} options={{ maintainAspectRatio: false }} />
             </div>)}
