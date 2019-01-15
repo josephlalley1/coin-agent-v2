@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-// import { Line } from 'react-chartjs-2'
+import { Line } from 'react-chartjs-2'
 
 class Home extends React.Component {
   constructor(props) {
@@ -30,13 +30,13 @@ class Home extends React.Component {
   }
 
   render() {
+    const {externalData} = this.state;
     return (
-        // <Line
-        //   data={data}
-        //   options={{
-        //     maintainAspectRatio: false
-        //   }}
-        // />
+      <div>
+        {this.state.externalData && this.state.externalData.map(
+          (coin, i) =>
+            console.log('Coin number', coin.rank, '-', coin.name, ', its history is:', coin.history);
+        <Line key={i} data={coin.history} options={{ maintainAspectRatio: false }})} />
         <div className="portfolio-container">
           <div className="pa4">
             <div className="overflow-auto">
@@ -68,6 +68,7 @@ class Home extends React.Component {
             </div>
           </div>
         </div>
+      </div>
     );
   }
 }
