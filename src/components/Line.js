@@ -53,7 +53,7 @@ const ChartLine = ({ data }) => {
     ]
   };
 
-  return <Line data={chartData} options={chartOptions}/>;
+  return <Line data={chartData} options={chartOptions} width="400"/>;
 };
 
 export default ChartLine;
