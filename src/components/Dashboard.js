@@ -24,12 +24,19 @@ class TradeIndex extends React.Component {
   }
 
   render() {
+    const totalPortfolioValue = []
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
     return (
       <div>
         <h1>DASHBOARD</h1>
         <div className="portfolio-container">
           <div className="pa4">
             <div className="overflow-auto">
+              {this.state.externalData && this.state.trades && this.state.trades.filter(trade => trade.transactionAddedBy === decodeToken().sub).map(
+                (trade) => {
+                  totalPortfolioValue.push(trade.transactionTotal * parseFloat(this.state.externalData.filter(coin => coin.symbol === trade.symbol)[0].price))
+                }
+              ), totalPortfolioValue.length > 0 && console.log('this is the total portfolio value, reduced', totalPortfolioValue.reduce(reducer))}
               <table className="f6 w-100 mw8 center" cellSpacing="0">
                 <thead>
                   <tr>
@@ -52,7 +59,7 @@ class TradeIndex extends React.Component {
                         <td className="pv3 pr3 bb b--light-gray">{trade.transactionTotal}</td>
                         <td className="pv3 pr3 bb b--light-gray">{trade.symbol}</td>
 
-                        {this.state.externalData && <td className="pv3 pr3 bb b--light-gray">${(trade.transactionTotal * parseFloat(this.state.externalData.filter(coin => coin.symbol === trade.symbol)[0].price)).toFixed(2) }</td> }
+                        {this.state.externalData && <td className="pv3 pr3 bb b--light-gray">${(trade.transactionTotal * parseFloat(this.state.externalData.filter(coin => coin.symbol === trade.symbol)[0].price)).toFixed(2)}</td> }
                         <td className="pv3 pr3 bb b--light-gray">{trade._id}</td>
                         <td className="pv3 pr3 bb b--light-gray tr"><Link to={`/trades/${trade._id}`}  key={i} className="remove-a-styling">View Trade</Link></td>
                       </tr>
@@ -62,7 +69,6 @@ class TradeIndex extends React.Component {
             </div>
           </div>
         </div>
-
       </div>
     );
   }
