@@ -69,6 +69,11 @@ class TradeIndex extends React.Component {
             </div>
           </div>
         </div>
+        { totalPortfolioValue.length > 0 &&
+          <div className="total-assets-box">
+            <h2>Total Assets Value = ${totalPortfolioValue.reduce(reducer)}</h2>
+          </div>
+        }
       </div>
     );
   }
