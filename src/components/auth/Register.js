@@ -35,7 +35,11 @@ class Register extends React.Component {
             </div>
             <div className="mt3">
               <label className="db fw4 lh-copy f6" htmlFor="password">Password</label>
-              <input className="b pa2 input-reset ba bg-transparent" type="password" name="password"  onChange={this.handleChange} value={this.state.password || ''}/>
+              <input className="b pa2 input-reset ba bg-transparent w-100 measure" type="password" name="password"  onChange={this.handleChange} value={this.state.password || ''}/>
+            </div>
+            <div className="mt3">
+              <label className="db fw4 lh-copy f6" htmlFor="monthlyProfitGoal">What is your Monthly Profit Goal ? (USD)</label>
+              <input className="pa2 input-reset ba bg-transparent w-100 measure" name="monthlyProfitGoal" type="number" onChange={this.handleChange} value={this.state.monthlyProfitGoal || ''}/>
             </div>
           </fieldset>
           <div className="mt3">
