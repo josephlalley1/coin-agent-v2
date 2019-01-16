@@ -37,20 +37,18 @@ const ChartLine = ({ data }) => {
       display: false
     },
     scales: {
-      xAxes: [
+      axes: [
         {
-          display: false
+          display: false,
+          gridLines: {
+            display: false
+          },
+          labels: {
+            show: false
+          }
         }
       ]
-    },
-    yAxes: [
-      {
-        display: false,
-        labels: {
-          show: false
-        }
-      }
-    ]
+    }
   };
 
   return <Line data={chartData} options={chartOptions} width="400"/>;
