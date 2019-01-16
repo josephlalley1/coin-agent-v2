@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Home from './components/Home';
+import Dashboard from './components/Dashboard';
 import TradeIndex from './components/trades/Index';
 import TradeNew from './components/trades/TradeNew';
 import TradeShow from './components/trades/TradeShow';
@@ -23,6 +24,7 @@ class App extends React.Component {
             <Header />
             <Switch>
               <Route exact path='/' component={Home}/>
+              <Route exact path='/dashboard' component={Dashboard}/>
               <Route exact path='/trades' component={TradeIndex}/>
               <Route exact path='/trades/new' component={TradeNew}/>
               <Route exact path="/login" component={Login} />
