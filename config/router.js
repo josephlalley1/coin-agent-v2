@@ -11,6 +11,9 @@ router.route('/trades/:id')
   .put(trades.update)
   .delete(trades.delete);
 
+router.route('/dashboard')
+  .get(trades.dash)
+
 router.post('/register', authController.register);
 router.post('/login', authController.login);
 

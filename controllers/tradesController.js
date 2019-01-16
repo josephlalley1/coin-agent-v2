@@ -37,10 +37,19 @@ function deleteRoute(req, res, next) {
     .catch(next);
 }
 
+function dashRoute(req, res) {
+  Trade
+    .find()
+    .then(trades => {
+      res.json(trades);
+    });
+}
+
 module.exports = {
   index: indexRoute,
   show: showRoute,
   create: createRoute,
   update: updateRoute,
-  delete: deleteRoute
+  delete: deleteRoute,
+  dash: dashRoute
 };
