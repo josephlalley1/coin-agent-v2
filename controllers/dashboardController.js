@@ -11,8 +11,6 @@ function totalAssetsValue() {
   })
 }
 
-// NEED TO JSONIFY THE RESPONSE TO READ IT
-
 module.exports = {
   total: totalAssetsValue
 }
