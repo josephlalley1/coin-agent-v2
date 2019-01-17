@@ -69,6 +69,21 @@ class TradeIndex extends React.Component {
             </div>
           </div>
         </div>
+        { this.state.externalData &&
+          <div>
+            <h2>Featured Coins - By Market Cap </h2>
+            <p>{this.state.externalData[0].name}</p>
+            <p>{this.state.externalData[0].price}</p>
+            <br></br>
+            <p>{this.state.externalData[1].name}</p>
+            <p>{this.state.externalData[1].price}</p>
+          </div>
+        }
+        { this.state.externalData &&
+          <div>
+            <h2>HOT Coins - By Change In Hour </h2>
+          </div>
+        }
         { totalPortfolioValue.length > 0 &&
           <div className="total-assets-box">
             <h2>Total Assets Value = ${totalPortfolioValue.reduce(reducer)}</h2>
