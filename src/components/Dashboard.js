@@ -26,6 +26,7 @@ class TradeIndex extends React.Component {
   render() {
     const totalPortfolioValue = []
     const reducer = (accumulator, currentValue) => accumulator + currentValue;
+    const highestHourlyChange = []
     return (
       <div>
         <h1>DASHBOARD</h1>
@@ -79,11 +80,19 @@ class TradeIndex extends React.Component {
             <p>{this.state.externalData[1].price}</p>
           </div>
         }
-        { this.state.externalData &&
-          <div>
-            <h2>HOT Coins - By Change In Hour </h2>
-          </div>
-        }
+        { this.state.externalData && this.state.externalData.map(
+          (coin) =>
+            highestHourlyChange.push(coin.change))}
+        <div>
+          <br></br>
+          <h2>HOT Coins - By Change In Hour </h2>
+          { highestHourlyChange.length > 0 && highestHourlyChange.map(
+            (changeValue, i) =>
+              <p key={i}>{changeValue}</p>
+          )
+          }
+        </div>
+
         { totalPortfolioValue.length > 0 &&
           <div className="total-assets-box">
             <br></br>
