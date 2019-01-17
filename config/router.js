@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const trades = require('../controllers/tradesController');
+const dashboard = require('../controllers/dashboardController');
 const authController = require('../controllers/authController');
 
 router.route('/trades')
@@ -12,7 +13,8 @@ router.route('/trades/:id')
   .delete(trades.delete);
 
 router.route('/dashboard')
-  .get(trades.dash)
+  .get(dashboard.total)
+  .get(trades.dash);
 
 router.post('/register', authController.register);
 router.post('/login', authController.login);
