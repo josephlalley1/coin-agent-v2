@@ -27,6 +27,7 @@ class TradeIndex extends React.Component {
     const totalPortfolioValue = []
     const reducer = (accumulator, currentValue) => accumulator + currentValue;
     const highestHourlyChange = []
+    const sorting = (a,b) => b - a;
     return (
       <div>
         <h1>DASHBOARD</h1>
@@ -83,17 +84,14 @@ class TradeIndex extends React.Component {
         { this.state.externalData && this.state.externalData.map(
           (coin) => {
             highestHourlyChange.push(coin.change)
+            highestHourlyChange.sort(sorting)
+            highestHourlyChange.length = 5;
           }
         )
         }
         <div>
           <br></br>
           <h2>HOT Coins - By Change In Hour </h2>
-          { highestHourlyChange.length > 0 && highestHourlyChange.sort(
-            function(a,b) {
-              return b-a
-            })}
-          { highestHourlyChange.length = 5 }
           { highestHourlyChange.map(
             (changeValue, i) =>
               <p key={i}>{changeValue}</p>
