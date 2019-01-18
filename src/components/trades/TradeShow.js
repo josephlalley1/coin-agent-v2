@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom';
 class TradeShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-    };
+    this.state = {};
     this.handleDelete = this.handleDelete.bind(this);
     // this.componentDidMount = this.componentDidMount.bind(this);
   }
@@ -20,6 +19,15 @@ class TradeShow extends React.Component {
         this.setState({ trade: trade.data });
         this.setState({ externalData: externalCoinData.data.data.coins });
         console.log(this.state);
+        console.log(this.state.externalData)
+        console.log(this.state.externalData.filter(coin => coin.symbol === this.state.trade.symbol)[0])
+        const coinId = this.state.externalData.filter(coin => coin.symbol === this.state.trade.symbol)[0].id
+        axios.get(`https://api.coinranking.com/v1/public/coin/${coinId}/history/24h`)
+          .then((result) => {
+            console.log(result)
+            this.setState({ coinHistory: result.data.data.history })
+            console.log('this is the coin history block', this.state)
+          })
       }));
   }
 
@@ -31,10 +39,6 @@ class TradeShow extends React.Component {
   }
 
   render() {
-    // setInterval(function() {
-    //   console.log('hello!');
-    //   this.componentDidMount;
-    // }, 5000);
     const trade = this.state.trade;
     return (
       <main>
