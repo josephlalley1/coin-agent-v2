@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import ChartLine from './Line.js';
+import ChartLine from './HomeLine.js';
 
 class Home extends React.Component {
   constructor(props) {

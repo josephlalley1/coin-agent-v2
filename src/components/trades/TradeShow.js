@@ -39,6 +39,24 @@ class TradeShow extends React.Component {
   }
 
   render() {
+    const { coinHistory } = this.state;
+    if (!coinHistory) return null;
+    const data = []
+    console.log('THIS IS THE COIN HISTORY CONSOLE LOG', coinHistory)
+    // const data = coinHistory.reduce((lineChartData, price) => {
+    //   console.log('this is the linechart data', lineChartData);
+    //   lineChartData = coinHistory.map((price) => [
+    //     parseFloat(price)
+    //   ]);
+    //   return lineChartData;
+    // }, {});
+    coinHistory.map((entry) => {
+      const emptyArray = []
+      emptyArray.push(parseFloat(entry.price))
+      data.push(emptyArray)
+    })
+    console.log('THIS IS THE DATA CONSOLE LOG', data);
+
     const trade = this.state.trade;
     return (
       <main>
