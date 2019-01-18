@@ -76,7 +76,6 @@ class TradeIndex extends React.Component {
             <h2>Featured Coins - By Market Cap </h2>
             <p>{this.state.externalData[0].name}</p>
             <p>{this.state.externalData[0].price}</p>
-            <br></br>
             <p>{this.state.externalData[1].name}</p>
             <p>{this.state.externalData[1].price}</p>
           </div>
@@ -85,7 +84,7 @@ class TradeIndex extends React.Component {
           (coin) => {
             highestHourlyChange.push(coin.change)
             highestHourlyChange.sort(sorting)
-            highestHourlyChange.length = 5;
+            highestHourlyChange.length = 5
           }
         )
         }
