@@ -91,7 +91,7 @@ class TradeIndex extends React.Component {
         }
         <div>
           <br></br>
-          <h2>HOT Coins - By Change In Hour </h2>
+          <h2>HOT Coins - By Change In Past 24 Hours </h2>
           { highestHourlyChange.map(
             (changeValue, i) =>
               <p key={i}>{changeValue}</p>
