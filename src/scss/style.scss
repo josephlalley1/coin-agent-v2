@@ -245,7 +245,8 @@ h2 {
 }
 
 .trades-container {
-  margin: 60px calc(5 * #{$spacing-normal})
+  max-width: 730px;
+  margin: 60px auto;
 }
 
 table {
@@ -253,6 +254,7 @@ table {
   padding: $spacing-normal;
   padding-top: 0;
   border-radius: $border-radius-normal;
+  width: 100%;
 }
 
 thead th {
@@ -260,6 +262,7 @@ thead th {
   text-align: left;
   padding-right: calc(5 * #{$spacing-normal});
   padding-top: $spacing-normal;
+  font-weight: 400;
 }
 
 tr {
@@ -283,9 +286,17 @@ tr {
 }
 
 .value-table {
-  padding-right: calc(8 * #{$spacing-normal});
+  padding-right: calc(6 * #{$spacing-normal});
 }
 
 .table-container {
   margin-top: 32px;
+}
+
+.remove-a-styling {
+  color: white;
+}
+
+.trade-header {
+  display: inline-block;
 }

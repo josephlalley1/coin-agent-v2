@@ -26,7 +26,8 @@ class TradeIndex extends React.Component {
   render() {
     return (
       <div className="trades-container">
-        <h2 className="heading">My Trades</h2>
+        <h2 className="heading trade-header">My Trades</h2>
+        <Link to='/trades/new' className="button-small">Add a trade</Link>
         <div className="table-container">
           <table>
             <thead>
@@ -36,8 +37,8 @@ class TradeIndex extends React.Component {
                 <th className="symbol-table">Symbol</th>
                 <th className="qty-table">Qty</th>
                 <th className="price-table">Price</th>
-                <th className="qty-table">Value</th>
-                <th></th>
+                <th className="value-table">Value</th>
+                <th>Link</th>
               </tr>
             </thead>
             <tbody>
@@ -50,14 +51,13 @@ class TradeIndex extends React.Component {
                     <td>{trade.transactionTotal}</td>
                     { this.state.externalData && <td>{this.state.externalData.filter(coin => coin.symbol === trade.symbol)[0].price}</td>}
                     { this.state.externalData && <td>${(trade.transactionTotal * parseFloat(this.state.externalData.filter(coin => coin.symbol === trade.symbol)[0].price)).toFixed(2) }</td> }
-                    <td><Link to={`/trades/${trade._id}`}  key={i}>View Trade</Link></td>
+                    <td><Link to={`/trades/${trade._id}`} className="remove-a-styling" key={i}>View Trade</Link></td>
                   </tr>
               )}
             </tbody>
           </table>
         </div>
       </div>
-
     );
   }
 }

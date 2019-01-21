@@ -69,18 +69,20 @@ $border-radius-normal: 4px;
   border-radius: $border-radius-normal;
   text-align: center;
   line-height: 52px;
-  padding: 0 calc(7 * #{$spacing-normal})
+  padding: 0 calc(7 * #{$spacing-normal});
 }
 
 .button-small {
-  background-color: $primary-color;
-  color: $primary-text-color;
-  padding: 0 calc(3 * #{$spacing-normal});
-  height: 46px;
+  background-color: #00AE99;
+  color: #FFFFFF;
+  padding: 0 calc(3 * 8px);
+  height: 39px;
   display: inline-block;
-  border-radius: $border-radius-normal;
+  border-radius: 4px;
   text-align: center;
-  line-height: 44px;
+  line-height: 39px;
+  float: right;
+  margin-top: -7px;
 }
 
 .input-boxes {
