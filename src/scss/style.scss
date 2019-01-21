@@ -300,3 +300,7 @@ tr {
 .trade-header {
   display: inline-block;
 }
+
+.button-spacing {
+  margin-right:  calc(2 * #{$spacing-normal});
+}

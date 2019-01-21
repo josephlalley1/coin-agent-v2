@@ -52,6 +52,8 @@ class TradeShow extends React.Component {
     const trade = this.state.trade;
     return (
       <div className="dashboard-container">
+        <a onClick={this.handleDelete} className="button-small">Delete this trade</a>
+        <Link to={`/trades/${this.props.match.params.id}/edit`} className="button-small button-spacing">Edit a trade</Link>
         <h2 className="heading">{trade.coinName}</h2>
         <div className="overview-container">
           <div className="overview-boxes">
