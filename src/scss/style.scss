@@ -94,5 +94,19 @@ html, body {
 }
 
 .dashboard-container {
-  margin: 0 calc(4 * #{$spacing-normal})
+  margin: 0 calc(5 * #{$spacing-normal})
+}
+
+.overview-container {
+  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.overview-boxes {
+  width: 432px;
+  height: 141px;
+  background-color: $bg-color-light;
+  display: inline-block;
+  border-radius: $border-radius-normal;
 }

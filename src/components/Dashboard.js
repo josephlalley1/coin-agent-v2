@@ -31,17 +31,24 @@ class TradeIndex extends React.Component {
     return (
       <div className="dashboard-container">
         <h2 className="heading">Dashboard</h2>
-        <div className="portfolio-container">
-          <div className="pa4">
-            <div className="overflow-auto">
-              {this.state.externalData && this.state.trades && this.state.trades.filter(trade => trade.transactionAddedBy === decodeToken().sub).map(
-                (trade) => {
-                  totalPortfolioValue.push(trade.transactionTotal * parseFloat(this.state.externalData.filter(coin => coin.symbol === trade.symbol)[0].price))
-                }
-              ), totalPortfolioValue.length > 0 && console.log('this is the total portfolio value, reduced', totalPortfolioValue.reduce(reducer))}
+
+        {this.state.externalData && this.state.trades && this.state.trades.filter(trade => trade.transactionAddedBy === decodeToken().sub).map(
+          (trade) => {
+            totalPortfolioValue.push(trade.transactionTotal * parseFloat(this.state.externalData.filter(coin => coin.symbol === trade.symbol)[0].price))
+          }
+        ), totalPortfolioValue.length > 0 && console.log('this is the total portfolio value, reduced', totalPortfolioValue.reduce(reducer))}
+
+        <div className="overview-container">
+          { totalPortfolioValue.length > 0 &&
+            <div className="overview-boxes">
+              <h2>Total Assets Value = ${totalPortfolioValue.reduce(reducer)}</h2>
             </div>
-          </div>
+          }
         </div>
+
+
+
+
         { this.state.externalData &&
           <div>
             <h2>Featured Coins - By Market Cap </h2>
@@ -68,13 +75,6 @@ class TradeIndex extends React.Component {
           )
           }
         </div>
-
-        { totalPortfolioValue.length > 0 &&
-          <div className="total-assets-box">
-            <br></br>
-            <h2>Total Assets Value = ${totalPortfolioValue.reduce(reducer)}</h2>
-          </div>
-        }
       </div>
     );
   }
