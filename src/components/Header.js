@@ -27,8 +27,8 @@ class Header extends React.Component {
         <div className="nav-items">
           {isAuthenticated() && <Link to="/dashboard">Dashboard</Link>}
           {isAuthenticated() && <Link to="/trades">Trades</Link>}
-          {!isAuthenticated() && <Link to="/login" className="subheading pri-text-color">Log in</Link>}
-          {!isAuthenticated() && <Link to="/register" className="subheading pri-text-color nav-items">Get an account</Link>}
+          {!isAuthenticated() && <Link to="/login" className="subheading pri-text-color nav-text">Log in</Link>}
+          {!isAuthenticated() && <Link to="/register" className="subheading pri-text-color">Get an account</Link>}
           {isAuthenticated() && <a onClick={this.handleLogout}>Log out</a>}
         </div>
       </nav>

@@ -2,6 +2,7 @@
 
 * {
   font-family: $main-font;
+  text-decoration: none;
 }
 
 html, body {
@@ -12,9 +13,18 @@ html, body {
 .logo {
   font-weight: 700;
   display: inline-block;
+  padding-left: calc(5 * #{$spacing-normal});
+  padding-top: 42px;
+  margin: 0;
 }
 
 .nav-items {
   display: inline-block;
   float: right;
+  padding-right: calc(5 * #{$spacing-normal});
+  padding-top: 55px;
+}
+
+.nav-text {
+  padding-right: calc(7 * #{$spacing-normal});
 }
