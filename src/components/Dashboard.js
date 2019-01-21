@@ -86,7 +86,15 @@ class TradeIndex extends React.Component {
             </div>
           </div>
         }
-        
+        <div className="main-container">
+          <div className="portfolio-container">
+
+          </div>
+          <div className="hotcoins-container">
+
+          </div>
+        </div>
+
         { this.state.externalData && this.state.externalData.map(
           (coin) => {
             highestHourlyChange.push(coin.change)
@@ -95,6 +103,7 @@ class TradeIndex extends React.Component {
           }
         )
         }
+
         <div>
           <br></br>
           <h2>HOT Coins - By Change In Past 24 Hours </h2>
