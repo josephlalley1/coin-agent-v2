@@ -51,37 +51,31 @@ class TradeShow extends React.Component {
 
     const trade = this.state.trade;
     return (
-      <main>
-        {trade
-          ?
-          <div>
-            <article className="pa3 pa5-ns" data-name="slab-stat-large">
-              <h3 className="b f6 ttu tracked">Trade Info</h3>
-              <br></br>
-              <div className="cf">
-                <dl className="db dib-l w-auto-l lh-title mr6-l">
-                  <dd className="b f6 fw4 ml0">Amount</dd>
-                  <dd className="f2 f-subheadline-l fw6 ml0">{trade.transactionTotal}</dd>
-                </dl>
-                <dl className="db dib-l w-auto-l lh-title mr6-l">
-                  <dd className="b f6 fw4 ml0">Coin Name</dd>
-                  <dd className="f2 f-subheadline-l fw6 ml0">{trade.coinName}</dd>
-                </dl>
-                <dl className="db dib-l w-auto-l lh-title mr6-l">
-                  <dd className="b f6 fw4 ml0">Value</dd>
-                  {this.state.externalData && <dd className="f2 f-subheadline-l fw6 ml0">${(trade.transactionTotal * parseFloat(this.state.externalData.filter(coin => coin.symbol === trade.symbol)[0].price)).toFixed(2) }</dd>}
-                </dl>
-              </div>
-              <br></br>
-              <br></br>
-              <Link to={`/trades/${this.props.match.params.id}/edit`} className="f6 link dim br2 ba ph3 pv2 mb2 dib remove-a-styling">Edit Trade</Link>
-              <a className="f6 link dim br2 ba ph3 pv2 mb2 dib remove-a-styling button-margins" onClick={this.handleDelete}>Delete Trade</a>
-            </article>
+      <div className="dashboard-container">
+        <h2 className="heading">{trade.coinName}</h2>
+        <div className="overview-container">
+          <div className="overview-boxes">
+            <div className="assets-box">
+              <h2 className="subheading sec-text-color coin-names">Your Holdings</h2>
+              <p className="body coin-info total-value">{trade.transactionTotal}<span className="currency-tag"> {trade.symbol}</span></p>
+            </div>
           </div>
-          :
-          <p>🏛🏛🏛 Waiting for trade 🏛🏛🏛</p>
-        }
-      </main>
+          <div className="overview-boxes">
+            <div className="assets-box">
+              <h2 className="subheading sec-text-color coin-names">Current Price</h2>
+              <p className="body coin-info total-value">{parseFloat(this.state.externalData.filter(coin => coin.symbol === trade.symbol)[0].price).toFixed(4)}<span className="currency-tag"> {trade.symbol}</span></p>
+            </div>
+          </div>
+          <div className="overview-boxes">
+            <div className="assets-box">
+              <h2 className="subheading sec-text-color coin-names">Your Holdings</h2>
+              <p className="body coin-info total-value">{(trade.transactionTotal * parseFloat(this.state.externalData.filter(coin => coin.symbol === trade.symbol)[0].price)).toFixed(2) }<span className="currency-tag"> USD</span></p>
+            </div>
+          </div>
+        </div>
+        <Link to={`/trades/${this.props.match.params.id}/edit`} className="f6 link dim br2 ba ph3 pv2 mb2 dib remove-a-styling">Edit Trade</Link>
+        <a className="f6 link dim br2 ba ph3 pv2 mb2 dib remove-a-styling button-margins" onClick={this.handleDelete}>Delete Trade</a>
+      </div>
     );
   }
 }
