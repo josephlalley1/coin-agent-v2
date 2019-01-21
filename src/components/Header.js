@@ -20,8 +20,8 @@ class Header extends React.Component {
   render() {
     const username = decodeToken().username;
     return (
-      <nav>
-        <Link to="/">
+      <nav className="navbar">
+        <Link to="/" className="logo-section">
           <h2 className="heading logo">Coin Agent</h2>
         </Link>
         <div className="nav-items">
