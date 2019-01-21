@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import ChartLine from '../ShowLine.js';
 
 class TradeShow extends React.Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class TradeShow extends React.Component {
         console.log(this.state.externalData)
         console.log(this.state.externalData.filter(coin => coin.symbol === this.state.trade.symbol)[0])
         const coinId = this.state.externalData.filter(coin => coin.symbol === this.state.trade.symbol)[0].id
-        axios.get(`https://api.coinranking.com/v1/public/coin/${coinId}/history/24h`)
+        axios.get(`https://api.coinranking.com/v1/public/coin/${coinId}/history/7d`)
           .then((result) => {
             console.log(result)
             this.setState({ coinHistory: result.data.data.history })
@@ -48,6 +49,8 @@ class TradeShow extends React.Component {
       emptyArray.push(parseFloat(entry.price))
       data.push(emptyArray)
     })
+
+    console.log(data)
 
     const trade = this.state.trade;
     return (
@@ -82,6 +85,7 @@ class TradeShow extends React.Component {
               <h2 className="subheading sec-text-color coin-names">{trade.coinName} Performance</h2>
             </div>
           </div>
+          <ChartLine data={data}/>
         </div>
       </div>
     );
