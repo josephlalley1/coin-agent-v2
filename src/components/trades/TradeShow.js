@@ -84,8 +84,10 @@ class TradeShow extends React.Component {
             <div className="trade-title">
               <h2 className="subheading sec-text-color coin-names">{trade.coinName} Performance</h2>
             </div>
+            <div className="trade-chart">
+              <ChartLine data={data}/>
+            </div>
           </div>
-          <ChartLine data={data}/>
         </div>
       </div>
     );

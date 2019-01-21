@@ -50,9 +50,6 @@ const ChartLine = ({ data }) => {
         gridLines: {
           display: false,
           drawBorder: false
-        },
-        ticks: {
-          display: false
         }
       }]
     }

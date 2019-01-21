@@ -51,7 +51,7 @@ class Home extends React.Component {
                 <img className="large-icon" src={coin.iconUrl}/>
                 <div className="small-chart-text">
                   <h2 className="subheading sec-text-color coin-names">{coin.name}</h2>
-                  <p className="body coin-info">{parseFloat(coin.price).toFixed(2)}<span className="currency-tag"> USD</span></p>
+                  <p className="body coin-info coin-prices2">${parseFloat(coin.price).toFixed(2)}<span className="currency-tag"> USD</span></p>
                 </div>
                 <div className="chart-div">
                   <ChartLine key={i} data={data[coin.name]}/>

@@ -22,14 +22,14 @@ class Header extends React.Component {
     return (
       <nav className="navbar">
         <Link to="/" className="logo-section">
-          <h2 className="heading logo">Coin Agent</h2>
+          <span className="logo-symbol">CA</span><h2 className="heading logo">Coin Agent</h2>
         </Link>
         <div className="nav-items">
           {isAuthenticated() && <Link to="/dashboard" className="body pri-text-color nav-text">Dashboard</Link>}
           {isAuthenticated() && <Link to="/trades" className="body pri-text-color nav-text">Trades</Link>}
           {!isAuthenticated() && <Link to="/login" className="body pri-text-color nav-text">Log in</Link>}
           {!isAuthenticated() && <Link to="/register" className="body pri-text-color">Get an account</Link>}
-          {isAuthenticated() && <a onClick={this.handleLogout}>Log out</a>}
+          {isAuthenticated() && <a href="/" className="remove-a-styling" onClick={this.handleLogout}>Log out</a>}
         </div>
       </nav>
     );

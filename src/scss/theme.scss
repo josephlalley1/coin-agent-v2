@@ -85,6 +85,14 @@ $border-radius-normal: 4px;
   margin-top: -7px;
 }
 
+.button-small:hover {
+  opacity: 0.9;
+}
+
+.button-large:hover {
+  opacity: 0.9;
+}
+
 .input-boxes {
   border-color: $grey-60;
   border-radius: 4px;

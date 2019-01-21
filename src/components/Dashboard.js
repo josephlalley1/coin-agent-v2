@@ -68,7 +68,7 @@ class TradeIndex extends React.Component {
             <div className="overview-boxes">
               <div className="assets-box">
                 <h2 className="subheading sec-text-color coin-names">Total Assets Value</h2>
-                <p className="body coin-info total-value">{totalPortfolioValue.reduce(reducer)}<span className="currency-tag"> USD</span></p>
+                <p className="body coin-info total-value">${parseFloat(totalPortfolioValue.reduce(reducer)).toFixed(2)}<span className="currency-tag"> USD</span></p>
               </div>
             </div>
             <div className="overview-boxes">
@@ -76,9 +76,9 @@ class TradeIndex extends React.Component {
                 <img className="large-icon" src={this.state.externalData[0].iconUrl}/>
                 <div className="assets-text">
                   <h2 className="subheading sec-text-color coin-names">{this.state.externalData[0].name}</h2>
-                  <p className="body coin-info price-value">{this.state.externalData[0].price}<span className="currency-tag"> USD</span></p>
+                  <p className="body coin-info price-value">${parseFloat(this.state.externalData[0].price).toFixed(2)}<span className="currency-tag"> USD</span></p>
                 </div>
-                <p className="body coin-info sec-text-color change24h">{this.state.externalData[0].change}% 24hr</p>
+                <p className="body coin-info sec-text-color change24h">{this.state.externalData[0].change}% 24h</p>
                 <div className="assets-chart">
                   <ChartLine data={data[this.state.externalData[0].name]}/>
                 </div>
@@ -89,9 +89,9 @@ class TradeIndex extends React.Component {
                 <img className="large-icon" src={this.state.externalData[1].iconUrl}/>
                 <div className="assets-text">
                   <h2 className="subheading sec-text-color coin-names">{this.state.externalData[1].name}</h2>
-                  <p className="body coin-info price-value">{this.state.externalData[1].price}<span className="currency-tag"> USD</span></p>
+                  <p className="body coin-info price-value">${parseFloat(this.state.externalData[0].price).toFixed(2)}<span className="currency-tag"> USD</span></p>
                 </div>
-                <p className="body coin-info sec-text-color change24h">{this.state.externalData[1].change}% 24hr</p>
+                <p className="body coin-info sec-text-color change24h">{this.state.externalData[1].change}% 24h</p>
                 <div className="assets-chart">
                   <ChartLine data={data[this.state.externalData[1].name]}/>
                 </div>
@@ -123,41 +123,41 @@ class TradeIndex extends React.Component {
                 <div className="hotcoins-entry">
                   <div className="hotcoins-text">
                     <h2 className="subheading sec-text-color hotcoins-size"><span className="hotcoins-arrows">↗</span> {highestDailyChange[0].name}</h2>
-                    <p className="body coin-info hotcoins-pricing">{highestDailyChange[0].price}<span className="currency-tag"> USD</span></p>
+                    <p className="body coin-info hotcoins-pricing">${parseFloat(highestDailyChange[0].price).toFixed(4)}<span className="currency-tag"> USD</span></p>
                   </div>
-                  <p className="body coin-info sec-text-color change24h">{highestDailyChange[0].change}% 24hr</p>
+                  <p className="body coin-info sec-text-color change24h">{highestDailyChange[0].change}% 24h</p>
                 </div>
 
                 <div className="hotcoins-entry">
                   <div className="hotcoins-text">
                     <h2 className="subheading sec-text-color hotcoins-size"><span className="hotcoins-arrows">↗</span> {highestDailyChange[1].name}</h2>
-                    <p className="body coin-info hotcoins-pricing">{highestDailyChange[1].price}<span className="currency-tag"> USD</span></p>
+                    <p className="body coin-info hotcoins-pricing">${parseFloat(highestDailyChange[1].price).toFixed(4)}<span className="currency-tag"> USD</span></p>
                   </div>
-                  <p className="body coin-info sec-text-color change24h hotcoins-change">{highestDailyChange[1].change}% 24hr</p>
+                  <p className="body coin-info sec-text-color change24h hotcoins-change">{highestDailyChange[1].change}% 24h</p>
                 </div>
 
                 <div className="hotcoins-entry">
                   <div className="hotcoins-text">
                     <h2 className="subheading sec-text-color hotcoins-size"><span className="hotcoins-arrows">↗</span> {highestDailyChange[2].name}</h2>
-                    <p className="body coin-info hotcoins-pricing">{highestDailyChange[2].price}<span className="currency-tag"> USD</span></p>
+                    <p className="body coin-info hotcoins-pricing">${parseFloat(highestDailyChange[2].price).toFixed(4)}<span className="currency-tag"> USD</span></p>
                   </div>
-                  <p className="body coin-info sec-text-color change24h hotcoins-change">{highestDailyChange[2].change}% 24hr</p>
+                  <p className="body coin-info sec-text-color change24h hotcoins-change">{highestDailyChange[2].change}% 24h</p>
                 </div>
 
                 <div className="hotcoins-entry">
                   <div className="hotcoins-text">
                     <h2 className="subheading sec-text-color hotcoins-size"><span className="hotcoins-arrows">↗</span> {highestDailyChange[3].name}</h2>
-                    <p className="body coin-info hotcoins-pricing">{highestDailyChange[3].price}<span className="currency-tag"> USD</span></p>
+                    <p className="body coin-info hotcoins-pricing">${parseFloat(highestDailyChange[3].price).toFixed(4)}<span className="currency-tag"> USD</span></p>
                   </div>
-                  <p className="body coin-info sec-text-color change24h hotcoins-change">{highestDailyChange[3].change}% 24hr</p>
+                  <p className="body coin-info sec-text-color change24h hotcoins-change">{highestDailyChange[3].change}% 24h</p>
                 </div>
 
                 <div className="hotcoins-entry bottom-entry">
                   <div className="hotcoins-text">
                     <h2 className="subheading sec-text-color hotcoins-size"><span className="hotcoins-arrows">↗</span> {highestDailyChange[4].name}</h2>
-                    <p className="body coin-info hotcoins-pricing">{highestDailyChange[4].price}<span className="currency-tag"> USD</span></p>
+                    <p className="body coin-info hotcoins-pricing">${parseFloat(highestDailyChange[4].price).toFixed(4)}<span className="currency-tag"> USD</span></p>
                   </div>
-                  <p className="body coin-info sec-text-color change24h hotcoins-change">{highestDailyChange[4].change}% 24hr</p>
+                  <p className="body coin-info sec-text-color change24h hotcoins-change">{highestDailyChange[4].change}% 24h</p>
                 </div>
 
               </div>

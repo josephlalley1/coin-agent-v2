@@ -294,7 +294,7 @@ tr {
 }
 
 .remove-a-styling {
-  color: white;
+  color: #a7a7a7;
 }
 
 .trade-header {
@@ -322,4 +322,25 @@ tr {
   height: 30px;
   line-height: 30px;
   padding: calc(3 * #{$spacing-normal}) calc(3 * #{$spacing-normal});
+}
+
+.trade-chart {
+  height: 300px;
+  margin-top: 40px;
+}
+
+.logo-symbol {
+  height: 44px;
+  width: 44px;
+  border: 6px solid #00b197;
+  font-size: 19px;
+  padding: 4px;
+  color: #00b197;
+  text-decoration: none;
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.coin-prices2 {
+  font-size: 18px;
 }
