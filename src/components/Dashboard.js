@@ -107,6 +107,11 @@ class TradeIndex extends React.Component {
                 <h2 className="subheading sec-text-color coin-names">Portfolio Performance</h2>
               </div>
             </div>
+            <div className="portfolio-unav">
+              <div className="portfolio-placeholder">
+                <h2 className="subheading sec-text-color coin-names coming-soon">Feature coming soon</h2>
+              </div>
+            </div>
           </div>
 
           <div className="hotcoins-container">

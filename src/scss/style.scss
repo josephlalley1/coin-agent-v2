@@ -99,6 +99,13 @@ h2 {
   margin: 0;
 }
 
+.coming-soon {
+  background: black;
+  color: $primary-text-color;
+  padding: 22px calc(4 * #{$spacing-normal});
+  border-radius: 48px;
+}
+
 .currency-tag {
   font-size: 12px;
 }
@@ -158,6 +165,7 @@ h2 {
 }
 
 .portfolio-container {
+  position: relative;
   height: 438px;
   width: 896px;
   background-color: $bg-color-dark;
@@ -172,6 +180,18 @@ h2 {
   height: 30px;
   line-height: 30px;
   padding: calc(3 * #{$spacing-normal}) calc(3 * #{$spacing-normal});
+}
+
+.portfolio-unav {
+  height: calc(100% - 78px);
+  background: url("../assets/graph-fake.png") center no-repeat;
+  background-size: cover;
+}
+
+.portfolio-placeholder {
+  position: absolute;
+  top: calc(50% - 35.4px);
+  left: calc(50% - 137.5px);
 }
 
 .hotcoins-container {
