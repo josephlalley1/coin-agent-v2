@@ -62,7 +62,7 @@ class TradeIndex extends React.Component {
               <div className="assets-box">
                 <img className="large-icon" src={this.state.externalData[0].iconUrl}/>
                 <div className="assets-text">
-                  <h2 className="subheading sec-text-color">{this.state.externalData[0].name}</h2>
+                  <h2 className="subheading sec-text-color coin-names">{this.state.externalData[0].name}</h2>
                   <p className="body coin-info price-value">{this.state.externalData[0].price}<span className="currency-tag"> USD</span></p>
                 </div>
                 <p className="body coin-info sec-text-color change24h">{this.state.externalData[0].change}% 24hr</p>
@@ -75,27 +75,18 @@ class TradeIndex extends React.Component {
               <div className="assets-box">
                 <img className="large-icon" src={this.state.externalData[1].iconUrl}/>
                 <div className="assets-text">
-                  <h2 className="subheading sec-text-color">{this.state.externalData[1].name}</h2>
-                  <p className="body coin-info">{this.state.externalData[1].price}<span className="currency-tag"> USD</span></p>
+                  <h2 className="subheading sec-text-color coin-names">{this.state.externalData[1].name}</h2>
+                  <p className="body coin-info price-value">{this.state.externalData[1].price}<span className="currency-tag"> USD</span></p>
                 </div>
                 <p className="body coin-info sec-text-color change24h">{this.state.externalData[1].change}% 24hr</p>
+                <div className="assets-chart">
+                  <ChartLine data={data[this.state.externalData[1].name]}/>
+                </div>
               </div>
             </div>
           </div>
         }
-
-
-
-
-        { this.state.externalData &&
-          <div>
-            <h2>Featured Coins - By Market Cap </h2>
-            <p>{this.state.externalData[0].name}</p>
-            <p>{this.state.externalData[0].price}</p>
-            <p>{this.state.externalData[1].name}</p>
-            <p>{this.state.externalData[1].price}</p>
-          </div>
-        }
+        
         { this.state.externalData && this.state.externalData.map(
           (coin) => {
             highestHourlyChange.push(coin.change)
