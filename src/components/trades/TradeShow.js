@@ -75,8 +75,14 @@ class TradeShow extends React.Component {
             </div>
           </div>
         </div>
-        <Link to={`/trades/${this.props.match.params.id}/edit`} className="f6 link dim br2 ba ph3 pv2 mb2 dib remove-a-styling">Edit Trade</Link>
-        <a className="f6 link dim br2 ba ph3 pv2 mb2 dib remove-a-styling button-margins" onClick={this.handleDelete}>Delete Trade</a>
+
+        <div className="trade-container">
+          <div className="trade-content">
+            <div className="trade-title">
+              <h2 className="subheading sec-text-color coin-names">{trade.coinName} Performance</h2>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

@@ -304,3 +304,22 @@ tr {
 .button-spacing {
   margin-right:  calc(2 * #{$spacing-normal});
 }
+
+.trade-container {
+  position: relative;
+  height: 438px;
+  width: 100%;
+  background-color: $bg-color-dark;
+  border-radius: $border-radius-normal;
+  display: inline-block;
+  float: left;
+  margin-right: 32px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.trade-content {
+  height: 30px;
+  line-height: 30px;
+  padding: calc(3 * #{$spacing-normal}) calc(3 * #{$spacing-normal});
+}
