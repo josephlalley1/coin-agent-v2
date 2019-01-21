@@ -104,7 +104,7 @@ h2 {
 }
 
 .dashboard-container {
-  margin: 0 calc(5 * #{$spacing-normal})
+  margin: 60px calc(5 * #{$spacing-normal})
 }
 
 .overview-container {
@@ -158,13 +158,14 @@ h2 {
 }
 
 .portfolio-container {
-  height: 300px;
+  height: 438px;
   width: 896px;
   background-color: $bg-color-dark;
   border-radius: $border-radius-normal;
   display: inline-block;
   float: left;
   margin-right: 32px;
+  margin-bottom: 32px;
 }
 
 .portfolio-content {
@@ -178,7 +179,6 @@ h2 {
   float: left;
   border-radius: $border-radius-normal;
   width: 432px;
-  height: 300px;
   background-color: $bg-color-dark;
 }
 
@@ -186,4 +186,40 @@ h2 {
   height: 30px;
   line-height: 30px;
   padding: calc(3 * #{$spacing-normal}) calc(3 * #{$spacing-normal});
+}
+
+.hotcoins-info {
+  margin-top: 30px;
+}
+
+.hotcoins-size {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.hotcoins-text {
+  float: left;
+}
+
+.hotcoins-entry {
+  float: left;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.hotcoins-arrows {
+  font-size: 18px;
+}
+
+.hotcoins-pricing {
+  padding-left: 20px;
+  margin-top: -5px;
+}
+
+.hotcoins-change {
+  float: right;
+}
+
+.bottom-entry {
+  margin-bottom: 24px;
 }

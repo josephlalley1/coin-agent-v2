@@ -8,6 +8,8 @@ class TradeIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.createHotList = this.createHotList.bind(this);
+
   }
 
   componentDidMount() {
@@ -24,22 +26,34 @@ class TradeIndex extends React.Component {
       }));
   }
 
+  createHotList(data) {
+    const hotList = [];
+    const sorting = (a,b) => b.change - a.change;
+    data.map(
+      (coin) =>
+        hotList.push({name: coin.name, price: coin.price, change: coin.change}),
+    )
+    hotList.sort(sorting);
+    hotList.length = 5;
+
+    return hotList
+  }
+
   render() {
     const { externalData } = this.state;
     if (!externalData) return null;
 
     const data = externalData.reduce((lineChartData, coin) => {
-      console.log(lineChartData);
       lineChartData[coin.name] = coin.history.map((price) => [
         parseFloat(price)
       ]);
       return lineChartData;
     }, {});
-    console.log(data);
+
     const totalPortfolioValue = []
     const reducer = (accumulator, currentValue) => accumulator + currentValue;
-    const highestHourlyChange = []
-    const sorting = (a,b) => b - a;
+    const highestDailyChange = this.createHotList(this.state.externalData);
+
     return (
       <div className="dashboard-container">
         <h2 className="heading">Dashboard</h2>
@@ -48,7 +62,7 @@ class TradeIndex extends React.Component {
           (trade) => {
             totalPortfolioValue.push(trade.transactionTotal * parseFloat(this.state.externalData.filter(coin => coin.symbol === trade.symbol)[0].price))
           }
-        ), totalPortfolioValue.length > 0 && console.log('this is the total portfolio value, reduced', totalPortfolioValue.reduce(reducer))}
+        )}
 
         { totalPortfolioValue.length > 0 &&
           <div className="overview-container">
@@ -100,27 +114,51 @@ class TradeIndex extends React.Component {
               <div className="hotcoins-title">
                 <h2 className="subheading sec-text-color coin-names">Hot Coins</h2>
               </div>
+
+              <div className="hotcoins-info">
+                <div className="hotcoins-entry">
+                  <div className="hotcoins-text">
+                    <h2 className="subheading sec-text-color hotcoins-size"><span className="hotcoins-arrows">↗</span> {highestDailyChange[0].name}</h2>
+                    <p className="body coin-info hotcoins-pricing">{highestDailyChange[0].price}<span className="currency-tag"> USD</span></p>
+                  </div>
+                  <p className="body coin-info sec-text-color change24h">{highestDailyChange[0].change}% 24hr</p>
+                </div>
+
+                <div className="hotcoins-entry">
+                  <div className="hotcoins-text">
+                    <h2 className="subheading sec-text-color hotcoins-size"><span className="hotcoins-arrows">↗</span> {highestDailyChange[1].name}</h2>
+                    <p className="body coin-info hotcoins-pricing">{highestDailyChange[1].price}<span className="currency-tag"> USD</span></p>
+                  </div>
+                  <p className="body coin-info sec-text-color change24h hotcoins-change">{highestDailyChange[1].change}% 24hr</p>
+                </div>
+
+                <div className="hotcoins-entry">
+                  <div className="hotcoins-text">
+                    <h2 className="subheading sec-text-color hotcoins-size"><span className="hotcoins-arrows">↗</span> {highestDailyChange[2].name}</h2>
+                    <p className="body coin-info hotcoins-pricing">{highestDailyChange[2].price}<span className="currency-tag"> USD</span></p>
+                  </div>
+                  <p className="body coin-info sec-text-color change24h hotcoins-change">{highestDailyChange[2].change}% 24hr</p>
+                </div>
+
+                <div className="hotcoins-entry">
+                  <div className="hotcoins-text">
+                    <h2 className="subheading sec-text-color hotcoins-size"><span className="hotcoins-arrows">↗</span> {highestDailyChange[3].name}</h2>
+                    <p className="body coin-info hotcoins-pricing">{highestDailyChange[3].price}<span className="currency-tag"> USD</span></p>
+                  </div>
+                  <p className="body coin-info sec-text-color change24h hotcoins-change">{highestDailyChange[3].change}% 24hr</p>
+                </div>
+
+                <div className="hotcoins-entry bottom-entry">
+                  <div className="hotcoins-text">
+                    <h2 className="subheading sec-text-color hotcoins-size"><span className="hotcoins-arrows">↗</span> {highestDailyChange[4].name}</h2>
+                    <p className="body coin-info hotcoins-pricing">{highestDailyChange[4].price}<span className="currency-tag"> USD</span></p>
+                  </div>
+                  <p className="body coin-info sec-text-color change24h hotcoins-change">{highestDailyChange[4].change}% 24hr</p>
+                </div>
+
+              </div>
             </div>
           </div>
-        </div>
-
-        { this.state.externalData && this.state.externalData.map(
-          (coin) => {
-            highestHourlyChange.push(coin.change)
-            highestHourlyChange.sort(sorting)
-            highestHourlyChange.length = 5
-          }
-        )
-        }
-
-        <div>
-          <br></br>
-          <h2>HOT Coins - By Change In Past 24 Hours </h2>
-          { highestHourlyChange.map(
-            (changeValue, i) =>
-              <p key={i}>{changeValue}</p>
-          )
-          }
         </div>
       </div>
     );
