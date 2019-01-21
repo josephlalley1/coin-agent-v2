@@ -20,17 +20,16 @@ class Header extends React.Component {
   render() {
     const username = decodeToken().username;
     return (
-      <nav className="dt w-100 border-box pa3 ph5-ns bb b--light-gray">
-        <Link to="/" className="dtc v-mid mid-gray link dim w-25">
-          <h2 className="link dim dark-gray f6 f5-ns dib mr3 mr4-ns site-title">Coin Agent</h2>
+      <nav>
+        <Link to="/">
+          <h2>Coin Agent</h2>
         </Link>
-        <div className="dtc v-mid w-75 tr">
-          {isAuthenticated() && <h2 className="link dim dark-gray f6 f5-ns dib mr3 mr4-ns">Welcome back, {username.replace(/^\w/, c => c.toUpperCase())}</h2>}
-          {isAuthenticated() && <Link to="/trades" className="link dim dark-gray f6 f5-ns dib mr3 mr4-ns">My portfolio</Link>}
-          {isAuthenticated() && <Link to="/trades/new" className="link dim dark-gray f6 f5-ns dib mr3 mr4-ns">Add a trade</Link>}
-          {!isAuthenticated() && <Link to="/register" className="link dim dark-gray f6 f5-ns dib mr3 mr4-ns">Register</Link>}
-          {!isAuthenticated() && <Link to="/login" className="link dim dark-gray f6 f5-ns dib">Log in</Link>}
-          {isAuthenticated() && <a className="link dim dark-gray f6 f5-ns dib" onClick={this.handleLogout}>Log out</a>}
+        <div>
+          {isAuthenticated() && <Link to="/dashboard">Dashboard</Link>}
+          {isAuthenticated() && <Link to="/trades">Trades</Link>}
+          {!isAuthenticated() && <Link to="/login">Log in</Link>}
+          {!isAuthenticated() && <Link to="/register">Get an account</Link>}
+          {isAuthenticated() && <a onClick={this.handleLogout}>Log out</a>}
         </div>
       </nav>
     );

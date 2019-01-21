@@ -12,8 +12,9 @@ import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import Header from './components/Header';
 
+import './scss/normalize.scss';
+import './scss/theme.scss';
 import './scss/style.scss';
-import 'bulma';
 
 class App extends React.Component {
   render() {

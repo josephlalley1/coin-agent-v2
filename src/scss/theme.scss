@@ -1,0 +1,87 @@
+// font-weight 400 = Book
+// font-weight 500 = Medium
+// font-weight 600 = Bold
+
+// THEME
+
+$primary-color: #00AE99;
+$bg-color-light: #003831;
+$bg-color-dark: #111A19;
+$site-bg-color: #000000;
+$primary-text-color: #FFFFFF;
+$secondary-text-color: $primary-color;
+$input-border-color: #979797;
+$grey-20: #333333;
+$grey-40: #666666;
+$grey-60: #999999;
+$main-font: 'Circular Std';
+$spacing-small: 4px;
+$spacing-normal: 8px;
+$border-radius-normal: 4px;
+
+* {
+  font-family: $main-font;
+}
+
+// COLOURS
+
+.pri-text-color {
+  color: $primary-text-color;
+}
+
+.sec-text-color {
+  color: $secondary-text-color;
+}
+
+// TYPOGRAPHY
+
+.heading {
+  font-size: 36px;
+  color: $primary-text-color;
+  font-weight: 500;
+}
+
+.subheading {
+  font-size: 24px;
+}
+
+.body {
+  font-size: 20px;
+}
+
+.footnote {
+  font-size: 18px;
+}
+
+// BOXES
+
+.main-content-box {
+  background-color: $bg-color-dark;
+}
+
+.smaller-content-box {
+  background-color: $bg-color-light;
+}
+
+.button-large {
+  background-color: $primary-color;
+  height: 60px;
+  border-radius: $border-radius-normal;
+}
+
+.button-small {
+  background-color: $primary-color;
+  height: 46px;
+  border-radius: $border-radius-normal;
+}
+
+.input-boxes {
+  border-color: $grey-60;
+  border-radius: 4px;
+}
+
+// BORDER RADIUS
+
+.br-normal {
+  border-radius: $border-radius-normal;
+}
