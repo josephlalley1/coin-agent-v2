@@ -37,17 +37,21 @@ const ChartLine = ({ data }) => {
       display: false
     },
     scales: {
-      axes: [
-        {
+      xAxes: [{
+        gridLines: {
           display: false,
-          gridLines: {
-            display: false
-          },
-          labels: {
-            show: false
-          }
+          drawBorder: false
         }
-      ]
+      }],
+      yAxes: [{
+        gridLines: {
+          display: false,
+          drawBorder: false
+        },
+        ticks: {
+          display: false
+        }
+      }]
     }
   };
 
