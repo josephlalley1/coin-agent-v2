@@ -122,7 +122,33 @@ h2 {
   border-radius: $border-radius-normal;
 }
 
-.assets-text {
+.assets-box {
   margin: 0;
   padding: calc(3 * #{$spacing-normal}) calc(3 * #{$spacing-normal});
+}
+
+.assets-text {
+  padding-left: calc(2 * #{$spacing-normal});
+  float: left;
+  padding-bottom: 8px;
+}
+
+.total-value {
+  padding-top: 8px;
+}
+
+.change24h {
+  display: inline-block;
+  float: right;
+}
+
+.assets-chart {
+  height: 75px;
+  width: 252px;
+  margin: 0;
+  padding-left: 55px;
+}
+
+.price-value {
+  padding-top: 8px;
 }

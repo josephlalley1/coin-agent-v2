@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { decodeToken } from '../lib/auth';
+import ChartLine from './HomeLine.js';
 
 class TradeIndex extends React.Component {
   constructor(props) {
@@ -24,6 +25,17 @@ class TradeIndex extends React.Component {
   }
 
   render() {
+    const { externalData } = this.state;
+    if (!externalData) return null;
+
+    const data = externalData.reduce((lineChartData, coin) => {
+      console.log(lineChartData);
+      lineChartData[coin.name] = coin.history.map((price) => [
+        parseFloat(price)
+      ]);
+      return lineChartData;
+    }, {});
+    console.log(data);
     const totalPortfolioValue = []
     const reducer = (accumulator, currentValue) => accumulator + currentValue;
     const highestHourlyChange = []
@@ -41,23 +53,32 @@ class TradeIndex extends React.Component {
         { totalPortfolioValue.length > 0 &&
           <div className="overview-container">
             <div className="overview-boxes">
-              <div className="assets-text">
+              <div className="assets-box">
                 <h2 className="subheading sec-text-color">Total Assets Value</h2>
-                <p className="body coin-info">{totalPortfolioValue.reduce(reducer)}<span className="currency-tag"> USD</span></p>
+                <p className="body coin-info total-value">{totalPortfolioValue.reduce(reducer)}<span className="currency-tag"> USD</span></p>
               </div>
             </div>
             <div className="overview-boxes">
-              <div className="assets-text">
+              <div className="assets-box">
                 <img className="large-icon" src={this.state.externalData[0].iconUrl}/>
-                <h2 className="subheading sec-text-color">{this.state.externalData[0].name}</h2>
-                <p className="body coin-info">{this.state.externalData[0].price}<span className="currency-tag"> USD</span></p>
+                <div className="assets-text">
+                  <h2 className="subheading sec-text-color">{this.state.externalData[0].name}</h2>
+                  <p className="body coin-info price-value">{this.state.externalData[0].price}<span className="currency-tag"> USD</span></p>
+                </div>
+                <p className="body coin-info sec-text-color change24h">{this.state.externalData[0].change}% 24hr</p>
+                <div className="assets-chart">
+                  <ChartLine data={data[this.state.externalData[0].name]}/>
+                </div>
               </div>
             </div>
             <div className="overview-boxes">
-              <div className="assets-text">
+              <div className="assets-box">
                 <img className="large-icon" src={this.state.externalData[1].iconUrl}/>
-                <h2 className="subheading sec-text-color">{this.state.externalData[1].name}</h2>
-                <p className="body coin-info">{this.state.externalData[1].price}<span className="currency-tag"> USD</span></p>
+                <div className="assets-text">
+                  <h2 className="subheading sec-text-color">{this.state.externalData[1].name}</h2>
+                  <p className="body coin-info">{this.state.externalData[1].price}<span className="currency-tag"> USD</span></p>
+                </div>
+                <p className="body coin-info sec-text-color change24h">{this.state.externalData[1].change}% 24hr</p>
               </div>
             </div>
           </div>
