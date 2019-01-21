@@ -54,7 +54,7 @@ class TradeIndex extends React.Component {
           <div className="overview-container">
             <div className="overview-boxes">
               <div className="assets-box">
-                <h2 className="subheading sec-text-color">Total Assets Value</h2>
+                <h2 className="subheading sec-text-color coin-names">Total Assets Value</h2>
                 <p className="body coin-info total-value">{totalPortfolioValue.reduce(reducer)}<span className="currency-tag"> USD</span></p>
               </div>
             </div>
@@ -88,10 +88,19 @@ class TradeIndex extends React.Component {
         }
         <div className="main-container">
           <div className="portfolio-container">
-
+            <div className="portfolio-content">
+              <div className="portfolio-title">
+                <h2 className="subheading sec-text-color coin-names">Portfolio Performance</h2>
+              </div>
+            </div>
           </div>
-          <div className="hotcoins-container">
 
+          <div className="hotcoins-container">
+            <div className="hotcoins-content">
+              <div className="hotcoins-title">
+                <h2 className="subheading sec-text-color coin-names">Hot Coins</h2>
+              </div>
+            </div>
           </div>
         </div>
 
