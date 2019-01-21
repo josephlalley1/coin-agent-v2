@@ -8,20 +8,20 @@ const ChartLine = ({ data }) => {
     datasets: [
       {
         label: '',
-        fill: true,
+        fill: false,
         lineTension: 0.1,
         backgroundColor: '#838df4',
-        borderColor: '#3c4bee',
+        borderColor: '#FFFFFF',
         borderCapStyle: 'butt',
         borderDash: [],
         borderDashOffset: 0.0,
         borderJoinStyle: 'miter',
-        pointBorderColor: '#3c4bee',
-        pointBackgroundColor: '#3c4bee',
+        pointBorderColor: '#FFFFFF',
+        pointBackgroundColor: '#FFFFFF',
         pointBorderWidth: 0,
         pointHoverRadius: 4,
-        pointHoverBackgroundColor: '#3c4bee',
-        pointHoverBorderColor: '#3c4bee',
+        pointHoverBackgroundColor: '#FFFFFF',
+        pointHoverBorderColor: '#FFFFFF',
         pointHoverBorderWidth: 2,
         pointRadius: 1,
         pointHitRadius: 1,
@@ -51,7 +51,7 @@ const ChartLine = ({ data }) => {
     }
   };
 
-  return <Line data={chartData} options={chartOptions} width="400"/>;
+  return <Line data={chartData} options={chartOptions} />;
 };
 
 export default ChartLine;

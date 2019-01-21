@@ -28,3 +28,53 @@ html, body {
 .nav-text {
   padding-right: calc(7 * #{$spacing-normal});
 }
+
+.chart-container {
+  margin-top: 120px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.chart-item {
+  margin: 40px;
+  background-color: $bg-color-light;
+  display: inline-block;
+  border-radius: $border-radius-normal;
+}
+
+.chart-content {
+  height: 250px;
+  width: 250px;
+  padding: calc(3 * #{$spacing-normal}) calc(3 * #{$spacing-normal}) calc(5 * #{$spacing-normal})  calc(3 * #{$spacing-normal});
+}
+
+.small-chart-text {
+  padding-left: 16px;
+  display: inline-block;
+}
+
+.large-icon {
+  width: 55px;
+  height: 55px;
+}
+
+.coin-names {
+  font-weight: 500;
+  margin: 0;
+}
+
+.coin-info {
+  margin: 0;
+}
+
+.currency-tag {
+  font-size: 16px;
+}
+
+.chart-div {
+  height: 135px;
+  width: 252px;
+  margin: 0;
+  padding-top: 40px;
+}

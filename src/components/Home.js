@@ -43,46 +43,22 @@ class Home extends React.Component {
     console.log(data);
 
     return (
-      <div>
+      <div className="chart-container">
         {this.state.externalData && this.state.externalData.map(
           (coin, i) =>
-            <div key={i} className="chart-box" style={{display: 'inline-block'}}>
-              <h1 style={{textAlign: 'center'}}>{coin.name}</h1>
-              <ChartLine key={i} data={data[coin.name]}/>
-              {console.log('this is the data for', coin.name, ':', data[coin.name])}
-            </div>)}
-
-        <div className="portfolio-container">
-          <div className="pa4">
-            <div className="overflow-auto">
-              <table className="f6 w-100 mw8 center" cellSpacing="0">
-                <thead>
-                  <tr>
-                    <th className="fw6 bb b--light-gray tl pb3 pr3 bg-white">Coin</th>
-                    <th className="fw6 bb b--light-gray tl pb3 pr3 bg-white">Coin Name</th>
-                    <th className="fw6 bb b--light-gray tl pb3 pr3 bg-white">Price</th>
-                    <th className="fw6 bb b--light-gray tl pb3 pr3 bg-white">Symbol</th>
-                    <th className="fw6 bb b--light-gray tl pb3 pr3 bg-white">Market Cap</th>
-                    <th className="fw6 bb b--light-gray tl pb3 pr3 bg-white">Website</th>
-                  </tr>
-                </thead>
-                <tbody className="lh-copy">
-                  {this.state.externalData && this.state.externalData.map(
-                    (coin, i) =>
-                      <tr key={i}>
-                        {this.state.externalData && <td className="pv3 pr3 bb b--light-gray"><img src={coin.iconUrl} width="30px"/></td>}
-                        <td className="pv3 pr3 bb b--light-gray">{coin.name}</td>
-                        <td className="pv3 pr3 bb b--light-gray">${parseFloat(coin.price).toFixed(2)}</td>
-                        <td className="pv3 pr3 bb b--light-gray">{coin.symbol}</td>
-                        <td className="pv3 pr3 bb b--light-gray">${this.numberWithCommas(coin.marketCap)}</td>
-                        <td className="pv3 pr3 bb b--light-gray"><a href={coin.websiteUrl} className="remove-a-styling">{coin.websiteUrl}</a></td>
-                      </tr>
-                  )}
-                </tbody>
-              </table>
+            <div key={i} className="chart-item">
+              <div className="chart-content">
+                <img className="large-icon" src={coin.iconUrl}/>
+                <div className="small-chart-text">
+                  <h2 className="subheading sec-text-color coin-names">{coin.name}</h2>
+                  <p className="body coin-info">{parseFloat(coin.price).toFixed(2)}<span className="currency-tag"> USD</span></p>
+                </div>
+                <div className="chart-div">
+                  <ChartLine key={i} data={data[coin.name]}/>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+        )}
       </div>
     );
   }
