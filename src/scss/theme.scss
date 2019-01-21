@@ -19,10 +19,6 @@ $spacing-small: 4px;
 $spacing-normal: 8px;
 $border-radius-normal: 4px;
 
-* {
-  font-family: $main-font;
-}
-
 // COLOURS
 
 .pri-text-color {
@@ -65,14 +61,25 @@ $border-radius-normal: 4px;
 
 .button-large {
   background-color: $primary-color;
-  height: 60px;
+  color: $primary-text-color;
+  display: inline-block;
+  height: 52px;
+  font-size: 20px;
   border-radius: $border-radius-normal;
+  text-align: center;
+  line-height: 52px;
+  padding: 0 calc(7 * #{$spacing-normal})
 }
 
 .button-small {
   background-color: $primary-color;
+  color: $primary-text-color;
+  padding: 0 calc(3 * #{$spacing-normal});
   height: 46px;
+  display: inline-block;
   border-radius: $border-radius-normal;
+  text-align: center;
+  line-height: 44px;
 }
 
 .input-boxes {

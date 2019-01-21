@@ -22,13 +22,13 @@ class Header extends React.Component {
     return (
       <nav>
         <Link to="/">
-          <h2>Coin Agent</h2>
+          <h2 className="heading logo">Coin Agent</h2>
         </Link>
-        <div>
+        <div className="nav-items">
           {isAuthenticated() && <Link to="/dashboard">Dashboard</Link>}
           {isAuthenticated() && <Link to="/trades">Trades</Link>}
-          {!isAuthenticated() && <Link to="/login">Log in</Link>}
-          {!isAuthenticated() && <Link to="/register">Get an account</Link>}
+          {!isAuthenticated() && <Link to="/login" className="subheading pri-text-color">Log in</Link>}
+          {!isAuthenticated() && <Link to="/register" className="subheading pri-text-color nav-items">Get an account</Link>}
           {isAuthenticated() && <a onClick={this.handleLogout}>Log out</a>}
         </div>
       </nav>
