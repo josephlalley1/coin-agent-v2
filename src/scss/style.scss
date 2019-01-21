@@ -243,3 +243,49 @@ h2 {
 .bottom-entry {
   margin-bottom: 24px;
 }
+
+.trades-container {
+  margin: 60px calc(5 * #{$spacing-normal})
+}
+
+table {
+  background-color: $bg-color-dark;
+  padding: $spacing-normal;
+  padding-top: 0;
+  border-radius: $border-radius-normal;
+}
+
+thead th {
+  color: $secondary-text-color;
+  text-align: left;
+  padding-right: calc(5 * #{$spacing-normal});
+  padding-top: $spacing-normal;
+}
+
+tr {
+  height: 40px;
+}
+
+.coinname-table {
+  padding-right: calc(8 * #{$spacing-normal});
+}
+
+.symbol-table {
+  padding-right: calc(5 * #{$spacing-normal});
+}
+
+.price-table {
+  padding-right: calc(8 * #{$spacing-normal});
+}
+
+.qty-table {
+  padding-right: calc(8 * #{$spacing-normal});
+}
+
+.value-table {
+  padding-right: calc(8 * #{$spacing-normal});
+}
+
+.table-container {
+  margin-top: 32px;
+}
