@@ -12,6 +12,10 @@ html, body {
   color: $primary-text-color;
 }
 
+h2 {
+  margin: 0;
+}
+
 .logo {
   font-weight: 700;
   display: inline-block;
@@ -80,6 +84,12 @@ html, body {
   height: 44px;
 }
 
+.small-icon {
+  float: left;
+  width: 32px;
+  height: 32px;
+}
+
 .coin-names {
   font-weight: 500;
   margin: 0;
@@ -101,6 +111,7 @@ html, body {
   margin-top: 32px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .overview-boxes {
@@ -109,4 +120,9 @@ html, body {
   background-color: $bg-color-light;
   display: inline-block;
   border-radius: $border-radius-normal;
+}
+
+.assets-text {
+  margin: 0;
+  padding: calc(3 * #{$spacing-normal}) calc(3 * #{$spacing-normal});
 }

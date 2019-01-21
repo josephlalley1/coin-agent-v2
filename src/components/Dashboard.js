@@ -38,13 +38,30 @@ class TradeIndex extends React.Component {
           }
         ), totalPortfolioValue.length > 0 && console.log('this is the total portfolio value, reduced', totalPortfolioValue.reduce(reducer))}
 
-        <div className="overview-container">
-          { totalPortfolioValue.length > 0 &&
+        { totalPortfolioValue.length > 0 &&
+          <div className="overview-container">
             <div className="overview-boxes">
-              <h2>Total Assets Value = ${totalPortfolioValue.reduce(reducer)}</h2>
+              <div className="assets-text">
+                <h2 className="subheading sec-text-color">Total Assets Value</h2>
+                <p className="body coin-info">{totalPortfolioValue.reduce(reducer)}<span className="currency-tag"> USD</span></p>
+              </div>
             </div>
-          }
-        </div>
+            <div className="overview-boxes">
+              <div className="assets-text">
+                <img className="large-icon" src={this.state.externalData[0].iconUrl}/>
+                <h2 className="subheading sec-text-color">{this.state.externalData[0].name}</h2>
+                <p className="body coin-info">{this.state.externalData[0].price}<span className="currency-tag"> USD</span></p>
+              </div>
+            </div>
+            <div className="overview-boxes">
+              <div className="assets-text">
+                <img className="large-icon" src={this.state.externalData[1].iconUrl}/>
+                <h2 className="subheading sec-text-color">{this.state.externalData[1].name}</h2>
+                <p className="body coin-info">{this.state.externalData[1].price}<span className="currency-tag"> USD</span></p>
+              </div>
+            </div>
+          </div>
+        }
 
 
 
