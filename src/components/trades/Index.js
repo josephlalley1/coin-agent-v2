@@ -49,7 +49,7 @@ class TradeIndex extends React.Component {
                     <td>{trade.coinName}</td>
                     <td>{trade.symbol}</td>
                     <td>{trade.transactionTotal}</td>
-                    { this.state.externalData && <td>${parseFloat(this.state.externalData.filter(coin => coin.symbol === trade.symbol)[0].price).toFixed(4)}</td>}
+                    { this.state.externalData && <td>${parseFloat(this.state.externalData.filter(coin => coin.symbol === trade.symbol)[0].price).toFixed(2)}</td>}
                     { this.state.externalData && <td>${(trade.transactionTotal * parseFloat(this.state.externalData.filter(coin => coin.symbol === trade.symbol)[0].price)).toFixed(2) }</td> }
                     <td><Link to={`/trades/${trade._id}`} className="remove-a-styling" key={i}>View Trade</Link></td>
                   </tr>
