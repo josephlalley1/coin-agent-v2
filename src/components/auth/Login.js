@@ -25,24 +25,24 @@ class Login extends React.Component {
 
   render() {
     return (
-      <main className="pa4 black-80">
-        <form className="measure center" onSubmit={this.handleSubmit}>
-          <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-            <legend className="f4 fw6 ph0 mh0">Log In</legend>
-            <div className="mt3">
-              <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
-              <input className="pa2 input-reset ba bg-transparent w-100" type="email" name="email" onChange={this.handleChange} value={this.state.email || ''}/>
+      <div>
+        <div className="add-trade-container margin-login">
+          <h2 className="heading trading-titles">Log In</h2>
+          <form onSubmit={this.handleSubmit}>
+            <div>
+              <p className="body input-labels">Email</p>
+              <input className="input-box" type="email" name="email" onChange={this.handleChange} value={this.state.email || ''}/>
             </div>
-            <div className="mv3">
-              <label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
-              <input className="b pa2 input-reset ba bg-transparent w-100" type="password" name="password" onChange={this.handleChange} value={this.state.password || ''}/>
+            <div>
+              <p className="body input-labels">Password</p>
+              <input className="input-box" type="password" name="password" onChange={this.handleChange} value={this.state.password || ''}/>
             </div>
-          </fieldset>
-          <div className="">
-            <input className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" type="submit" value="Sign in"/>
-          </div>
-        </form>
-      </main>
+            <div>
+              <input className="button-small add-trade-button" type="submit" value="Log in"/>
+            </div>
+          </form>
+        </div>
+      </div>
     );
   }
 }
