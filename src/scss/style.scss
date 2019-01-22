@@ -344,3 +344,25 @@ tr {
 .coin-prices2 {
   font-size: 18px;
 }
+
+.add-trade-container {
+  max-width: 214px;
+  margin: 60px auto;
+}
+
+.input-box {
+  background-color: black;
+  border-radius: $border-radius-normal;
+  height: 35px;
+  width: 210px;
+  border-color: #979797;
+  border-width: 1px;
+}
+
+.input-labels {
+  margin-bottom: 3px;
+}
+
+.add-trade-button {
+  margin-top: 20px;
+}

@@ -22,27 +22,29 @@ export default class TradeNew extends React.Component {
 
   render() {
     return(
-      <main className="pa4 black-80">
-        <form className="measure center" onSubmit={this.handleSubmit}>
-          <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-            <legend className="f4 fw6 ph0 mh0"></legend>
-            <div className="mt3">
-              <label className="db fw6 lh-copy f6" htmlFor="email-address">Coin Name</label>
-              <input className="pa2 input-reset ba bg-transparent w-100" onChange={this.handleChange} value={this.state.coinName || ''} name="coinName" />
-            </div>
-            <div className="mt3">
-              <label className="db fw6 lh-copy f6" htmlFor="email-address">Coin Symbol</label>
-              <input className="pa2 input-reset ba bg-transparent w-100" onChange={this.handleChange} value={this.state.symbol || ''} name="symbol" />
-            </div>
-            <div className="mv3">
-              <label className="db fw6 lh-copy f6" htmlFor="password">Amount</label>
-              <input className="b pa2 input-reset ba bg-transparent w-100" onChange={this.handleChange} value={this.state.transactionTotal || ''} name="transactionTotal" />
-            </div>
-          </fieldset>
-          <div className="">
-            <input className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" type="submit" value="Add trade"/>
+      <main>
+        <div>
+          <div className="add-trade-container">
+            <h2 className="heading trading-titles">Add a trade</h2>
+            <form onSubmit={this.handleSubmit}>
+              <div>
+                <p className="body input-labels">Coin Name</p>
+                <input className="input-box" onChange={this.handleChange} value={this.state.coinName || ''} name="coinName" />
+              </div>
+              <div>
+                <p className="body input-labels">Coin Symbol</p>
+                <input className="input-box" onChange={this.handleChange} value={this.state.symbol || ''} name="symbol" />
+              </div>
+              <div>
+                <p className="body input-labels">Amount</p>
+                <input className="input-box" onChange={this.handleChange} value={this.state.transactionTotal || ''} name="transactionTotal" />
+              </div>
+              <div>
+                <input className="button-small add-trade-button" type="submit" value="Add trade"/>
+              </div>
+            </form>
           </div>
-        </form>
+        </div>
       </main>
     );
   }
