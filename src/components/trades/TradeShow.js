@@ -73,7 +73,7 @@ class TradeShow extends React.Component {
           </div>
           <div className="overview-boxes">
             <div className="assets-box">
-              <h2 className="subheading sec-text-color coin-names">Your Holdings</h2>
+              <h2 className="subheading sec-text-color coin-names">Holdings Value</h2>
               <p className="body coin-info total-value">{(trade.transactionTotal * parseFloat(this.state.externalData.filter(coin => coin.symbol === trade.symbol)[0].price)).toFixed(2) }<span className="currency-tag"> USD</span></p>
             </div>
           </div>
