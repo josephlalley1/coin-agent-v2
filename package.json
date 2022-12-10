@@ -48,7 +48,7 @@
     "bcrypt": "^3.0.2",
     "bulma": "^0.7.2",
     "chart.js": "^2.7.3",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "jsonwebtoken": "^8.4.0",
     "moment": "^2.22.2",
     "mongoose": "^5.3.13",
